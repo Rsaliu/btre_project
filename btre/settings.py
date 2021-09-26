@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-!kij#m4!e=7hs-t*fi1ft**@-ae3b0)rtaei!4g-@i%!ti&=@!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com','0.0.0.0','192.168.43.243']
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'firmwares.apps.FirmwaresConfig',
     'contacts.apps.ContactsConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
@@ -145,7 +146,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #media
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'mdeia')
-STATIC_URL='/meida/'
+STATIC_URL='/mdeia/'
 
 from django.contrib.messages import constants as messages
 
