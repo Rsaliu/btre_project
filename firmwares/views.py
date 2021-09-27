@@ -7,7 +7,7 @@ def get_version():
     pass
 
 def download(request):
-    file_path = os.path.join(settings.MEDIA_ROOT,"https_ota_variant_real.ino.esp32.bin")
+    file_path = os.path.join(settings.BASE_DIR,"firmwares/https_ota_variant_real.ino.esp32.bin")
     if os.path.exists(file_path):
         with open(file_path, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/octet-stream")
