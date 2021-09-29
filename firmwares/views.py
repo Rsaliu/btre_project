@@ -14,3 +14,10 @@ def download(request):
             response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
             return response
     raise Http404
+
+def data(request):
+    device_id=request.POST['deviceId']
+    longitude=request.POST['longitude']
+    latitude=request.POST['latitude']
+    print(f'payload: received is: device_is: {device_id} longitude: {longitude} latitude: {latitude}')
+    return HttpResponse(status=201)
