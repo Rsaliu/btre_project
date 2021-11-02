@@ -21,3 +21,8 @@ def data(request):
     latitude=request.POST['latitude']
     print(f'payload: received is: device_is: {device_id} longitude: {longitude} latitude: {latitude}')
     return HttpResponse(status=201)
+
+
+def iotpayload(request):
+    print(f'payload: received is: {request.POST["data"]}')
+    return HttpResponse(status=201)
