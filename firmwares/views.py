@@ -28,4 +28,4 @@ def data(request):
 def iotpayload(request):
     json_request=json.loads(request.body)
     print(f'payload: received is: {json_request}')
-    return HttpResponse(status=201)
+    return HttpResponse("Data uploaded",status=201)
