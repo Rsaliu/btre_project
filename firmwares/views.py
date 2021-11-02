@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,Http404
 import os
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 def get_version():
     pass
@@ -22,7 +23,7 @@ def data(request):
     print(f'payload: received is: device_is: {device_id} longitude: {longitude} latitude: {latitude}')
     return HttpResponse(status=201)
 
-
+@csrf_exempt
 def iotpayload(request):
     print(f'payload: received is: {request.POST["data"]}')
     return HttpResponse(status=201)
