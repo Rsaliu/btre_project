@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse,Http404
+from django.http import HttpResponse,Http404, response
 import os
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 def get_version():
     pass
@@ -25,5 +26,6 @@ def data(request):
 
 @csrf_exempt
 def iotpayload(request):
-    print(f'payload: received is: {request.POST["data"]}')
+    json_request=json.loads(request.body)
+    print(f'payload: received is: {json_request}')
     return HttpResponse(status=201)
