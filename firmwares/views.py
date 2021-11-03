@@ -27,5 +27,6 @@ def data(request):
 @csrf_exempt
 def iotpayload(request):
     json_request=json.loads(request.body)
-    print(f'payload: received is: {json_request}')
+    print(f'payload: received is: {json_request}' )
+    # dummy comment
     return HttpResponse("Data uploaded",status=201)
